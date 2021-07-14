@@ -1,12 +1,19 @@
-import React from 'react';
-import './App.css';
+import * as React from "react";
+import { HelloComponent } from "./Components/Hello";
+import { NameEditComponent } from "./Components/NameEdit";
+import "./App.css";
 
-function App() {
+export const App = () => {
+  const [name, setName] = React.useState("initialName");
+
+  const setUserNameState = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setName(event.target.value);
+  };
+
   return (
-    <div className="App">
-      <h3>Hello</h3>
-    </div>
+    <>
+      <HelloComponent userName={name} />
+      <NameEditComponent userName={name} onChange={setUserNameState} />
+    </>
   );
-}
-
-export default App;
+};
