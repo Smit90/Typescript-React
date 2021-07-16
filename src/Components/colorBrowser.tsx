@@ -12,5 +12,5 @@ export const ColorBrowser: React.FC<Props> = (props) => {
     backgroundColor: `rgb(${props.color.red},${props.color.green},${props.color.blue})`,
   };
 
-  return <div style={divStyle}></div>;
+  return <div className="container mt-2" style={divStyle}></div>;
 };

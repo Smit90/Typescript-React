@@ -15,17 +15,20 @@ const updateColor = (props: Props, colorId: keyof Color) => (value: any) => {
 };
 
 export const ColorPicker: React.FC<Props> = (props) => (
-  <div>
+  <div className="container">
+    <label>Red</label>
     <ColorSliderComponent
       value={props.color.red}
       onValueUpdated={updateColor(props, "red")}
     />
     <br />
+    <label>Green</label>
     <ColorSliderComponent
       value={props.color.green}
       onValueUpdated={updateColor(props, "green")}
     />
     <br />
+    <label>Blue</label>
     <ColorSliderComponent
       value={props.color.blue}
       onValueUpdated={updateColor(props, "blue")}
