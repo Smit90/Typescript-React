@@ -2,27 +2,32 @@ import * as React from "react";
 
 interface Props {
   initialUserName: string;
-  onNameUpdated: (newName: string) => any;
+  editingName: string;
+  onNameUpdated: () => any;
+  onEditingNameUpdated: (newEditingName: string) => any;
 }
 
 export const NameEditComponent: React.FC<Props> = (props) => {
-  const [editingName, setEditingName] = React.useState(props.initialUserName);
 
   const onChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setEditingName(event.target.value);
+    props.onEditingNameUpdated(event.target.value)
   };
 
   const onNameSubmit = (event: any): any => {
-    props.onNameUpdated(editingName);
+    props.onNameUpdated();
   };
 
   return (
-    <>
+    <div className="container">
       <label>Update Name: </label>
-      <input value={editingName} onChange={onChange} />
-      <button type="submit" onClick={onNameSubmit}>
+      <input placeholder={props.editingName} onChange={onChange} />
+      <button
+        className="btn btn-primary ml-2"
+        type="submit"
+        onClick={onNameSubmit}
+      >
         Submit
       </button>
-    </>
+    </div>
   );
 };

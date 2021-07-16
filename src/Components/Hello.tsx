@@ -5,5 +5,9 @@ interface Props {
 }
 
 export const HelloComponent: React.FC<Props> = (props) => {
-  return <h2>Hello User: {props.userName} !</h2>;
+  return (
+    <div className="container">
+      <h4>Hello User: {props.userName} !</h4>
+    </div>
+  );
 };
