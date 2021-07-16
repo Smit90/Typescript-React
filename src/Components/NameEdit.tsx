@@ -5,12 +5,12 @@ interface Props {
   editingName: string;
   onNameUpdated: () => any;
   onEditingNameUpdated: (newEditingName: string) => any;
+  disabled: boolean;
 }
 
 export const NameEditComponent: React.FC<Props> = (props) => {
-
   const onChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    props.onEditingNameUpdated(event.target.value)
+    props.onEditingNameUpdated(event.target.value);
   };
 
   const onNameSubmit = (event: any): any => {
@@ -24,6 +24,7 @@ export const NameEditComponent: React.FC<Props> = (props) => {
       <button
         className="btn btn-primary ml-2"
         type="submit"
+        disabled={props.disabled}
         onClick={onNameSubmit}
       >
         Submit
