@@ -66,8 +66,10 @@ export const App = () => {
         </ul>
       </SidebarComponent>
       <MemberTableComponent />
+      <hr />
       <ColorBrowser color={color} />
       <ColorPicker color={color} onColorUpdated={setColor} />
+      <hr />
       <HelloComponent userName={name} />
       <NameEditComponent
         initialUserName={name}
