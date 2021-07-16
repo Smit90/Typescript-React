@@ -5,6 +5,7 @@ import {
   ColorBrowser,
   ColorPicker,
   SidebarComponent,
+  MemberTableComponent
 } from "./Components";
 import "./App.css";
 import "./Components/sidebar.css";
@@ -64,6 +65,7 @@ export const App = () => {
           </li>
         </ul>
       </SidebarComponent>
+      <MemberTableComponent />
       <ColorBrowser color={color} />
       <ColorPicker color={color} onColorUpdated={setColor} />
       <HelloComponent userName={name} />
